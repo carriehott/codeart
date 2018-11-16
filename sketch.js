@@ -16,7 +16,7 @@ img5 = loadImage("images/mouth.png");
 }
 
 function setup() {
-  createCanvas(1800, 1200);
+  createCanvas(2000, 1500);
 }
 function draw() {
   var x = mouseX;
