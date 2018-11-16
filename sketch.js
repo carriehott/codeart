@@ -3,7 +3,7 @@ var img2;
 var img3;
 var img4;
 var img5;
-var xspeed = 10;
+var xspeed = 4;
 var xpos = 0;
 
 
@@ -11,7 +11,7 @@ function preload() {
 img1 = loadImage("images/static.jpg");
 img2 = loadImage("images/eye_1.png");
 img3 = loadImage("images/eye_2.png");
-img4 = loadImage("images/computer3.png");
+img4 = loadImage("images/clouds.png");
 img5 = loadImage("images/mouth.png");
 }
 
@@ -24,12 +24,21 @@ function draw() {
   var ix = width - mouseX;  // Inverse X
   var iy = height - mouseY; // Inverse Y
 
-  tint(0, 153, 204, 126);
+  tint(0, 153, 204, 200);
   image(img1, 0, 0);
+
+  image(img4, xpos, 100);
+if (xpos > width) {
+  xspeed = -4;
+}
+if (xpos < 0) {
+  xspeed = 4;
+}
+xpos += xspeed;
 
   image(img2, x, 200);
 
-  image(img3, 800, 200, iy);
+  image(img2, 800, 200, iy);
 
   image(img5, x, iy, iy);
 
